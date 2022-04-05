@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
+import { theme } from 'styles/theme';
+import Stats from 'components/Stats';
 import Rectangle from 'assets/rectangle-line.svg';
 import LeaveTaken from 'assets/total-leaves-taken.svg';
-import { Stats } from 'components/pages/leave-management';
 import Approval from 'assets/waiting-for-approval.svg';
 // import Arrow from 'assets/arrow.svg';
 import { Flex, Image } from 'atoms';
-import { theme } from 'styles/theme';
-import { leaveDashboard } from 'store/leaveSlice';
+// import { leaveDashboard } from 'store/leaveSlice';
 
 const Container = styled.div`
 	display: flex;
@@ -59,7 +59,7 @@ export default function StatsCard() {
 	const waitingForApproval = dashboard?.map((data) => data?.pending_leave);
 
 	useEffect(() => {
-		dispatch(leaveDashboard());
+		// dispatch(leaveDashboard());
 	}, [dispatch]);
 
 	return (
